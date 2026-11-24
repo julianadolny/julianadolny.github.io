@@ -63,7 +63,7 @@ section {
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
 }
 
 section h2 {
@@ -105,7 +105,9 @@ label {
     margin-top: 8px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccd3df;
@@ -114,7 +116,9 @@ input, select, textarea {
     font-family: Arial, sans-serif;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: 2px solid #7899d0;
     border-color: #7899d0;
 }
@@ -147,7 +151,6 @@ form button:hover {
 #mensagem {
     margin-top: 12px;
     font-weight: bold;
-    color: #247445;
 }
 
 /* FILTROS */
@@ -182,6 +185,12 @@ form button:hover {
     padding: 16px;
     margin-bottom: 15px;
     background-color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.atividade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
 }
 
 .atividade.concluida {
@@ -203,9 +212,11 @@ form button:hover {
     overflow-wrap: anywhere;
 }
 
+/* STATUS */
+
 .status {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 15px;
     font-size: 12px;
     font-weight: bold;
@@ -274,7 +285,6 @@ footer {
 /* RESPONSIVIDADE */
 
 @media (max-width: 600px) {
-
     header h1 {
         font-size: 24px;
     }
@@ -298,5 +308,4 @@ footer {
     .acoes button {
         flex: 1;
     }
-
 }

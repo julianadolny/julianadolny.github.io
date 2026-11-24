@@ -1,19 +1,18 @@
 
-<
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Conecta Escola</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./database.js" defer></script>
+    <script src="./juan.js" defer></script>
 </head>
 
 <body>
-
     <header>
         <h1>🎓 Conecta Escola</h1>
         <p>Organize seus estudos e não perca seus prazos!</p>
@@ -26,14 +25,11 @@
     </header>
 
     <main>
-
-        <!-- INÍCIO -->
         <section id="inicio">
             <h2>Olá, estudante! 👋</h2>
             <p>Organize sua rotina escolar de maneira simples.</p>
 
             <div class="resumo">
-
                 <div class="card-resumo">
                     <h3 id="totalPendentes">0</h3>
                     <p>Pendentes</p>
@@ -48,17 +44,13 @@
                     <h3 id="totalAtividades">0</h3>
                     <p>Total de atividades</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- CADASTRO -->
         <section id="cadastro">
-
             <h2>📝 Cadastrar atividade</h2>
 
             <form id="formAtividade">
-
                 <label for="nome">Nome da atividade:</label>
                 <input
                     type="text"
@@ -94,12 +86,11 @@
                     <option>Estudo</option>
                 </select>
 
-                <label for="data">Data de entrega:</label>
-                <input
-                    type="date"
-                    id="data"
-                    required
-                >
+                <label for="data" id="labelData">
+                    Data de entrega:
+                </label>
+
+                <input type="date" id="data" required>
 
                 <label for="descricao">Descrição (opcional):</label>
                 <textarea
@@ -110,44 +101,35 @@
                 <button type="submit">
                     + Cadastrar atividade
                 </button>
-
             </form>
 
-            <p id="mensagem"></p>
-
+            <p id="mensagem" role="status" aria-live="polite"></p>
         </section>
 
-        <!-- ATIVIDADES -->
         <section id="atividades">
+            <h2>📚 Minhas atividades</h2>
 
-    <h2>📚 Minhas atividades</h2>
+            <div class="filtros">
+                <button type="button" data-filtro="todas" class="filtro ativo">
+                    Todas
+                </button>
 
-    <div class="filtros">
+                <button type="button" data-filtro="pendente" class="filtro">
+                    Pendentes
+                </button>
 
-        <button type="button" data-filtro="todas" class="filtro ativo">
-            Todas
-        </button>
+                <button type="button" data-filtro="concluida" class="filtro">
+                    Concluídas
+                </button>
+            </div>
 
-        <button type="button" data-filtro="pendente" class="filtro">
-            Pendentes
-        </button>
-
-        <button type="button" data-filtro="concluida" class="filtro">
-            Concluídas
-        </button>
-
-    </div>
-
-    <div id="listaAtividades"></div>
-
-</section>
-
+            <div id="listaAtividades"></div>
+        </section>
     </main>
 
     <footer>
         <p>Conecta Escola © 2026</p>
         <p>Organização e tecnologia a favor da educação.</p>
     </footer>
-
 </body>
 </html>
